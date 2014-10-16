@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  root to: 'contract_allocations#index'
+
+  resources :contract_allocations do
+  	collection do
+  		post :update_value
+  	end
+  end
 end

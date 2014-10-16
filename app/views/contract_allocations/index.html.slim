@@ -1,0 +1,26 @@
+br
+table.table.table-condensed.edit
+	thead
+		tr
+			th width="18%" Contract
+			th width="18%" Category
+			th width="27%" Rate
+			th width="27%" Hour
+			th width="10%" Total
+	tbody
+		- @allocations.each do |f|
+			tr.val_rows
+				td = f.contract_id
+				td = f.labor_category_id
+				td
+					a.rate href="#" data-id=f.id = number_with_precision(f.labor_rate, precision: 2)
+				td
+					a.hour href="#" data-id=f.id = "%g" % ("%.2f" % f.hours)
+				td.total = number_with_precision(f.labor_rate * f.hours, precision: 2)
+		tr
+			td 
+				strong Totals
+			td
+			td.rate_total
+			td.hour_total
+			td.totals

@@ -10,9 +10,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
+gem 'bootstrap-editable-rails'
 gem 'high_voltage'
 gem 'slim-rails'
 gem 'thin'
+gem 'pg'
+gem 'seed_dump'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -24,6 +27,5 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
